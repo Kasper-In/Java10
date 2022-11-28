@@ -74,7 +74,7 @@ public class RadioTest {
 
         radio.next();
 
-        int expected = 1;
+        int expected = 0;
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
@@ -92,4 +92,17 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
-}
+
+    @Test
+    public void nextFirstStation() {
+        Radio radio = new Radio();
+        radio.setCurrentStation(2);
+
+        radio.next();
+
+        int expected = 3;
+        int actual = radio.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+ }
